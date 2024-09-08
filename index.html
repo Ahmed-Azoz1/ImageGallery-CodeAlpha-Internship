@@ -4,10 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/logo2.jpg" type="image/jpg">
+    <!-- import Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <title>IMAGE GALLERY</title>
 </head>
 <body>
-    
+    <main>
+
+        <section class="title-gallery">
+            <img src="./images/5.jpg" class="image-overlay" alt="search">
+            <div class="content">
+                <h1>Discover Egypt's Wonders</h1>
+                <p>Immerse yourself in the timeless beauty and grandeur of Egypt. From the majestic pyramids of Giza to the enchanting temples of Luxor, explore a gallery of breathtaking images that capture the essence of Egypt's rich cultural heritage and stunning landscapes. Search and download captivating photos that bring the magic of Egypt to life.</p>
+            </div>
+        </section>
+
+        <!-- galley -->
+        <section class="gallery">
+            <div class="container">
+
+                <!-- filter City -->
+                <div class="filters">
+                    <button class="filter-btn" data-filter="giza">Giza</button>
+                    <button class="filter-btn" data-filter="luxor">Luxor</button>
+                    <button class="filter-btn" data-filter="aswan">Aswan</button>
+                    <button class="filter-btn" data-filter="cairo">Cairo</button>
+                    <button class="filter-btn" data-filter="sinai">Sinai</button>
+                    <button class="filter-btn" data-filter="fayoum">Fayoum</button>
+                </div>
+
+                <!-- old lightbox -->
+                <!-- <div id="lightbox" class="lightbox">
+                    <span class="close">&times;</span>
+                    <img class="lightbox-content" id="lightboxImage">
+                </div>                 -->
+
+                <div id="lightbox" class="lightbox">
+                    <span class="close">&times;</span>
+                    <div>
+                        <img class="lightbox-content" id="lightboxImage">
+                    </div>
+                    <span class="prev">&lt;</span>
+                    <span class="next">&gt;</span>
+                </div>                
+
+                <!-- Show Images -->
+                <ul class="images" id="imageGallery">
+                    <li class="card">
+                        <img src="./images/1.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/2.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/3.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/4.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/5.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/6.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/7.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/8.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./images/9.jpg" alt="Image">
+                        <div class="details">
+                            <div class="location">
+                                <i class="uil uil-map-marker"></i>
+                                <span>Geza</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button class="load-more" id="loadMore">Load More</button>
+            </div>
+        </section>
+    </main>
 
 
     <script src="./main.js"></script>
