@@ -16,23 +16,23 @@ input,button,i{
 
 
 
-/* تنسيق القسم */
+/* Section Styling */
 .title-gallery {
     position: relative;
-    color: #fff; /* لون النص الافتراضي */
+    color: #fff; 
     text-align: center;
     padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.3); /* لون داكن مع شفافية */
+    background: rgba(0, 0, 0, 0.3);
 }
 
-/* إضافة طبقة مظللة فوق الصورة */
+/* Image overlay */
 .image-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* خلف المحتوى */
+    z-index: -1; 
 }
 
 .title-gallery img{
@@ -42,38 +42,38 @@ input,button,i{
     object-fit: cover;
 }
 
-/* تنسيق العنوان */
+/* Title Styling */
 .title-gallery h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #f1c40f; /* لون ذهبي */
-    font-family: 'Georgia', serif; /* خط أنيق */
+    color: #f1c40f; 
+    font-family: 'Georgia', serif;
 }
 
-/* تنسيق النص */
+/* Paragraph Styling */
 .title-gallery p {
     font-size: 1.25rem;
     line-height: 1.6;
-    color: #ecf0f1; /* لون نصي فاتح */
+    color: #ecf0f1; 
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Arial', sans-serif; /* خط بسيط */
+    font-family: 'Arial', sans-serif; 
 }
 
-/* إخفاء الفقرة على الشاشات الأصغر */
+/* Hide paragraph on smaller screens */
 @media (max-width: 768px) {
     .title-gallery p {
-        display: none; /* إخفاء النص على الشاشات الأصغر */
+        display: none; 
     }
 
     .title-gallery h1 {
-        font-size: 2.5rem; /* تصغير حجم الخط ليتناسب مع الشاشات الأصغر */
+        font-size: 2.5rem; 
     }
 }
 
 
 
-/* =================================  Gallery  ================================= */
+/* =================================  Gallery Styling  ================================= */
 
 .gallery{
     display: flex;
@@ -160,50 +160,49 @@ input,button,i{
 .filters {
     text-align: center;
     margin-bottom: 40px;
-    padding: 0 10px; /* إضافة padding لتجنب التلاصق على الأجهزة الصغيرة */
+    padding: 0 10px; 
 }
 
 .filter-btn {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #f39c12, #e67e22); /* تدرج لوني يعكس الألوان الذهبية والدافئة */
+    background: linear-gradient(135deg, #f39c12, #e67e22);
     color: white;
     border: none;
-    border-radius: 5px; /* إضافة زوايا دائرية للأزرار */
+    border-radius: 5px;
     margin: 0 10px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s ease; /* تأثير انتقال سلس عند تغيير اللون */
+    transition: background 0.3s ease; 
 }
 
 .filter-btn:hover {
-    background: linear-gradient(135deg, #e67e22, #f39c12); /* تدرج لوني عكسي عند المرور بالماوس */
+    background: linear-gradient(135deg, #e67e22, #f39c12);
 }
 
-/* تنسيق الأزرار لتكون أكثر توافقًا مع الأجهزة المختلفة */
+/* Button adjustments for responsiveness */
 @media (max-width: 768px) {
     .filter-btn {
         padding: 8px 15px;
         font-size: 14px;
-        margin: 5px; /* تقليل المسافة بين الأزرار على الشاشات الصغيرة */
+        margin: 5px; 
     }
 }
 
-
-  /* العرض لأجهزة الكمبيوتر (4 صور في الصف) */
+/* Desktop layout (4 images per row) */
 @media (min-width: 1024px) {
     .gallery .images {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-  /* العرض لأجهزة اللاب توب (2 صور في الصف) */
+/* Laptop layout (2 images per row) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .gallery .images {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-  /* العرض لأجهزة الهاتف المحمول (صورة واحدة في الصف) */
+/* Mobile layout (1 image per row) */
 @media (max-width: 767px) {
     .gallery .images {
         grid-template-columns: 1fr;
@@ -215,7 +214,7 @@ input,button,i{
 
 /* ===================================================   lightbox  ===================================================*/
 
-/* تنسيق الـ Lightbox */
+/* Lightbox styling */
 .lightbox {
     display: none;
     position: fixed;
@@ -231,19 +230,19 @@ input,button,i{
     align-items: center;
 }
 
-/* تنسيق المحتوى داخل الـ Lightbox */
+/* Content inside Lightbox */
 .lightbox-content {
     margin: auto;
     display: block;
-    max-width: 90vw; /* أقصى عرض مناسب للأجهزة */
-    max-height: 90vh; /* أقصى ارتفاع مناسب للأجهزة */
+    max-width: 90vw; 
+    max-height: 90vh;
     width: auto;
     height: auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* إضافة ظل لزيادة وضوح الصورة */
-    border-radius: 10px; /* إضافة زوايا منحنية */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
 }
 
-/* تنسيق أزرار التحكم */
+/* Control buttons */
 .close, .prev, .next {
     position: absolute;
     top: 50%;
@@ -258,7 +257,7 @@ input,button,i{
 .close {
     top: 20px;
     right: 35px;
-    font-size: 30px; /* تصغير حجم الزر للإغلاق */
+    font-size: 30px; /* Reduce close button size */
 }
 
 .prev {
@@ -271,14 +270,14 @@ input,button,i{
     transform: translateY(-50%);
 }
 
-/* إضافة تحسينات للمساحات الصغيرة مثل الهواتف */
+/* Adjustments for smaller screens like phones */
 @media (max-width: 768px) {
     .close, .prev, .next {
-        font-size: 25px; /* تصغير حجم الأزرار */
+        font-size: 25px; /* Smaller buttons */
     }
 
     .lightbox-content {
-        max-width: 95vw; /* توسيع الصورة بشكل أكبر على الشاشات الصغيرة */
+        max-width: 95vw; /* Larger image on smaller screens */
         max-height: 85vh;
     }
 }

@@ -1,13 +1,14 @@
+// =====================================================   TASK 1 CodeAlpha   =====================================================
 const apiKey = 'GzyPN3ExzhEsPjb8Oqr10dcSRTUgUZ1dgKMSUyWoBH7G5sNwutkplgLh';
 let currentQuery = '';
 let page = 1;
-let images = []; // لتخزين جميع الروابط الخاصة بالصور
+let images = []; // To store all image URLs
 
-// دالة لتحميل الصور من Pexels بناءً على المدينة المختارة
+// Function to load images from Pexels based on the selected city
 function loadImages(query, page) {
     const url = `https://api.pexels.com/v1/search?query=${query}%20egypt&per_page=15&page=${page}`;
     
-    // إظهار حالة "Loading" على الزر
+    // Show "Loading" state on the button
     const loadMoreButton = document.getElementById('loadMore');
     loadMoreButton.textContent = 'Loading...';
     loadMoreButton.disabled = true;
@@ -18,7 +19,7 @@ function loadImages(query, page) {
     .then(response => response.json())
     .then(data => {
         addImagesToGallery(data.photos, query);
-        // إعادة النص الأصلي للزر بعد اكتمال التحميل
+        // Restore original button text after loading
         loadMoreButton.textContent = 'Load More';
         loadMoreButton.disabled = false;
     })
@@ -29,7 +30,7 @@ function loadImages(query, page) {
     });
 }
 
-// دالة لإضافة الصور إلى المعرض وتحديث الصور للـ Lightbox
+// Function to add images to the gallery and update images for Lightbox
 function addImagesToGallery(photos, query) {
     const imagesWrapper = document.getElementById('imageGallery');
     const fragment = document.createDocumentFragment();
@@ -52,11 +53,11 @@ function addImagesToGallery(photos, query) {
         li.prepend(imgElement);
         fragment.appendChild(li);
 
-        // حفظ الصورة للـ Lightbox وتحديد الفهرس بشكل صحيح
+        // Save image for Lightbox and set correct index
         const imageIndex = images.length;
         images.push(photo.src.large2x);
 
-        // ربط حدث النقر على الصورة لفتحها في الـ Lightbox
+        // Add click event to open the image in Lightbox
         imgElement.addEventListener('click', function () {
             showLightbox(imageIndex);
         });
@@ -65,18 +66,18 @@ function addImagesToGallery(photos, query) {
     imagesWrapper.appendChild(fragment);
 }
 
-// إضافة event listeners للأزرار لتفعيل الفلتر بناءً على المدينة
+// Add event listeners to buttons to activate the filter based on the city
 document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', function() {
         document.getElementById('imageGallery').innerHTML = '';
-        images = [];  // إعادة تعيين الصور للـ Lightbox
+        images = [];  // Reset images for Lightbox
         currentQuery = this.getAttribute('data-filter');
         page = 1;
         loadImages(currentQuery, page);
     });
 });
 
-// زر "Load More" لتحميل المزيد من الصور
+// "Load More" button to load additional images
 document.getElementById('loadMore').addEventListener('click', function() {
     if (currentQuery) {
         page++;
@@ -84,9 +85,9 @@ document.getElementById('loadMore').addEventListener('click', function() {
     }
 });
 
-// تحميل الصور الأولية عند تحميل الصفحة
+// Load initial images when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    currentQuery = 'Giza';  // تعيين كلمة مفتاحية افتراضية للمدينة
+    currentQuery = 'Giza';  // Set default city keyword
     loadImages(currentQuery, page);
 });
 
@@ -98,19 +99,19 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 let currentImageIndex = 0;
 
-// دالة لعرض الصورة المحددة في Lightbox
+// Function to display the selected image in Lightbox
 function showLightbox(index) {
     currentImageIndex = index;
     lightbox.style.display = 'block';
     lightboxImage.src = images[currentImageIndex];
 }
 
-// إغلاق Lightbox عند الضغط على زر الإغلاق
+// Close Lightbox when the close button is clicked
 closeBtn.addEventListener('click', function() {
     lightbox.style.display = 'none';
 });
 
-// التنقل بين الصور
+// Navigate between images
 nextBtn.addEventListener('click', function() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     showLightbox(currentImageIndex);
@@ -121,9 +122,11 @@ prevBtn.addEventListener('click', function() {
     showLightbox(currentImageIndex);
 });
 
-// إغلاق الـ Lightbox عند الضغط في أي مكان خارج الصورة
+// Close Lightbox when clicking outside the image
 lightbox.addEventListener('click', function(e) {
     if (e.target !== lightboxImage && e.target !== nextBtn && e.target !== prevBtn) {
         lightbox.style.display = 'none';
     }
 });
+
+// =====================================================  END TASK 1 CodeAlpha   =====================================================
